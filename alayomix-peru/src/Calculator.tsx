@@ -35,9 +35,9 @@ export default function Calc() {
   const rushFee = rush ? Math.round(sub * 0.3) : 0;
   const total = sub + rushFee;
 
-  const C = "#00e5a0";
-  const btn = (a: boolean) => ({ cursor:"pointer" as const, padding:"0.5rem 0.8rem", borderRadius:"3px", border:`1px solid ${a ? C : "#1e1e1e"}`, background: a ? "#00e5a015" : "#0d0d0d", color: a ? C : "#444", fontFamily:"inherit", fontSize:"0.72rem", flex:1, textAlign:"center" as const });
-  const row = (a: boolean) => ({ cursor:"pointer" as const, display:"flex", alignItems:"center", gap:"0.8rem", padding:"0.65rem 1rem", border:`1px solid ${a ? "#00e5a030" : "#1a1a1a"}`, borderRadius:"3px", background: a ? "#00e5a008" : "transparent", color: a ? "#ccc" : "#555", fontSize:"0.78rem", userSelect:"none" as const });
+  const C = "#C9A84C";
+  const btn = (a: boolean) => ({ cursor:"pointer" as const, padding:"0.5rem 0.8rem", borderRadius:"3px", border:`1px solid ${a ? C : "#1e1e1e"}`, background: a ? "#C9A84C15" : "#0d0d0d", color: a ? C : "#444", fontFamily:"inherit", fontSize:"0.72rem", flex:1, textAlign:"center" as const });
+  const row = (a: boolean) => ({ cursor:"pointer" as const, display:"flex", alignItems:"center", gap:"0.8rem", padding:"0.65rem 1rem", border:`1px solid ${a ? "#C9A84C30" : "#1a1a1a"}`, borderRadius:"3px", background: a ? "#C9A84C08" : "transparent", color: a ? "#ccc" : "#555", fontSize:"0.78rem", userSelect:"none" as const });
   const box = (a: boolean) => ({ width:"13px", height:"13px", border:`1px solid ${a ? C : "#2a2a2a"}`, borderRadius:"2px", display:"inline-flex", alignItems:"center", justifyContent:"center", background: a ? C : "transparent", color:"#000", fontSize:"0.65rem", flexShrink:0 as const });
 
   return (
@@ -88,7 +88,7 @@ export default function Calc() {
       <section style={{ marginBottom:"1.8rem", display:"flex", flexDirection:"column", gap:"0.45rem" }}>
         <div style={{ fontSize:"0.55rem", letterSpacing:"0.35em", color:"#333", marginBottom:"0.2rem" }}>ADD-ONS</div>
         {t.includesStems
-          ? <div style={{ ...row(false), opacity:0.4, cursor:"default" }}><span style={box(true)}>✓</span><span style={{ flex:1 }}>Stems</span><span style={{ fontSize:"0.7rem", color:"#00e5a040" }}>incluido</span></div>
+          ? <div style={{ ...row(false), opacity:0.4, cursor:"default" }}><span style={box(true)}>✓</span><span style={{ flex:1 }}>Stems</span><span style={{ fontSize:"0.7rem", color:"#C9A84C40" }}>incluido</span></div>
           : <div style={row(stems)} onClick={() => setStems(!stems)}><span style={box(stems)}>{stems?"✓":""}</span><span style={{ flex:1 }}>Stems</span><span style={{ fontSize:"0.7rem", color: stems ? C : "#333" }}>+${S}/song</span></div>
         }
         <div style={row(master)} onClick={() => setMaster(!master)}><span style={box(master)}>{master?"✓":""}</span><span style={{ flex:1 }}>Mastering</span><span style={{ fontSize:"0.7rem", color: master ? C : "#333" }}>+${M}/song</span></div>
@@ -104,7 +104,7 @@ export default function Calc() {
         </div>
       </section>
 
-      <div style={{ border:"1px solid #00e5a020", borderRadius:"4px", padding:"1.5rem", background:"#0a0a0c", position:"relative", overflow:"hidden" }}>
+      <div style={{ border:"1px solid #C9A84C20", borderRadius:"4px", padding:"1.5rem", background:"#0a0a0c", position:"relative", overflow:"hidden" }}>
         <div style={{ position:"absolute", top:0, left:0, right:0, height:"1px", background:`linear-gradient(90deg, transparent, ${C}, transparent)` }} />
         <button onClick={() => setOpen(!open)} style={{ background:"none", border:"none", color:"#2a2a2a", fontSize:"0.55rem", letterSpacing:"0.35em", cursor:"pointer", padding:0, marginBottom:"1.2rem", display:"block" }}>
           DESGLOSE {open ? "▲" : "▼"}
@@ -131,7 +131,7 @@ export default function Calc() {
           <div>
             <div style={{ display:"flex", alignItems:"center", gap:"0.6rem", marginBottom:"0.4rem" }}>
               <div style={{ fontSize:"0.55rem", letterSpacing:"0.35em", color:"#2a2a2a" }}>TOTAL ESTIMADO</div>
-              {disc && <span style={{ fontSize:"0.55rem", background:"#00e5a020", color:C, border:"1px solid #00e5a040", borderRadius:"2px", padding:"0.1rem 0.4rem" }}>−10% PROYECTO</span>}
+              {disc && <span style={{ fontSize:"0.55rem", background:"#C9A84C20", color:C, border:"1px solid #C9A84C40", borderRadius:"2px", padding:"0.1rem 0.4rem" }}>−10% PROYECTO</span>}
             </div>
             <div style={{ fontSize:"2.8rem", fontWeight:"bold", color:C, letterSpacing:"-0.03em" }}>${total.toLocaleString()}</div>
           </div>
